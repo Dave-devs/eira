@@ -9,10 +9,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#CA1515",
+        lightHover: "",
+        darkHover: "",
+        darkTheme: "#001219",
+      },
+      fontFamily: {
+        outfit: ["Outfit", "sans-serif"],
+        playfair: ["Playfair_Display", "serif"],
+        playwrite: ["Playwrite_IN", "serif"],
+      },
+      gridTemplateColumns: {
+        auto: "repeat(auto-fit, minmax(200px, 1fr))",
       },
     },
   },
+  darkMode: "selector",
   plugins: [],
 } satisfies Config;
