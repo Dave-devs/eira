@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Navbar from "./sections/Navbar";
+import Hero from "./sections/Hero";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -28,6 +29,7 @@ export default function Home() {
   return (
     <>
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      <Hero isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
     </>
   );
 }
