@@ -213,3 +213,14 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
     </nav>
   );
 }
+
+/**
+ * Navigation bar component that provides the main navigation interface for the application.
+ * Features responsive design with mobile menu, theme toggling, search, profile dropdown,
+ * and shopping cart functionality.
+ * 
+ * @component
+ * @param {boolean} isDarkMode - Current theme state (dark/light)
+ * @param {function} setIsDarkMode - Function to toggle theme state
+ * @returns {JSX.Element} Responsive navigation bar with dynamic styling based on scroll position
+ */
