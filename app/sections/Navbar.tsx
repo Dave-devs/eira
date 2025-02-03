@@ -41,13 +41,12 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
       {/* ******** Logo Image ******** */}
       <div>
         <Image
-          id="#top"
           src={`${isDarkMode ? "/logo-dark.png" : "/logo-light.png"}`}
           alt="logo"
           width={100}
-          height={0}
+          height={64}
           className="w-full h-16 cursor-pointer"
-          objectFit="fit"
+          style={{ objectFit: "contain" }}
         />
       </div>
       {/* ******** Nav Links ******** */}
@@ -90,7 +89,7 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
       {/* ******** Nav Icons ******** */}
       <div className="flex items-center gap-6">
         {/* ******** Toggle Theme Icons ******** */}
-        <button onClick={() => setIsDarkMode(!isDarkMode)}>
+        <button aria-label="Toggle theme" onClick={() => setIsDarkMode(!isDarkMode)}>
           {isDarkMode ? (
             <MdOutlineLightMode size={24} />
           ) : (
@@ -102,7 +101,7 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
         <FiSearch className="cursor-pointer" size={24} />
 
         {/* ******** Profile Icon ******** */}
-        <div className="group relative">
+        <div className="group relative" data-testid="profile-menu">
           <MdOutlinePersonOutline className="cursor-pointer" size={24} />
           <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
             <div className={`flex flex-col gap-2 w-36 py-3 px-5 bg-black text-gray-200 rounded ${isDarkMode ? "bg-white text-slate-400 shadow-sm shadow-slate-50" : ""}`}>
@@ -126,6 +125,7 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
         </Link>
         {/* ******** Mobile Menu Icon ******** */}
         <RiMenu3Fill
+          aria-label="Open menu"
           onClick={() => setMenuIsVisible(true)}
           className="cursor-pointer sm:hidden"
           size={24}
