@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Playfair_Display, Playwrite_IN } from "next/font/google";
 import "./globals.css";
+import { ShopContextProvider } from "./context/ShopContext";
 
 const outfit = Outfit({
   weight: ['400', '500', '600', '700'],
@@ -89,7 +90,9 @@ export default function RootLayout({
       <body
         className={`${outfit.className} ${playfair.className} ${playwrite.className} antialiased leading-8 overflow-x-hidden dark:bg-darkTheme dark:text-white`}
       >
-        {children}
+        <ShopContextProvider>
+          {children}
+        </ShopContextProvider>
       </body>
     </html>
   );
