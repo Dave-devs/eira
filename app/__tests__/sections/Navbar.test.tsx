@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Navbar from "../../sections/Navbar";
+import Navbar from "../../components/Navbar";
 
 describe("Navbar Component", () => {
   const mockSetIsDarkMode = jest.fn();
@@ -52,18 +52,18 @@ describe("Navbar Component", () => {
     });
   });
 
-    it('handles theme toggle correctly', () => {
-      const { rerender } = render(<Navbar isDarkMode={false} setIsDarkMode={mockSetIsDarkMode} />);
-    
-      const themeButton = screen.getByRole('button', { name: /toggle theme/i });
-      fireEvent.click(themeButton);
-      expect(mockSetIsDarkMode).toHaveBeenCalledWith(true);
-    
-      rerender(<Navbar isDarkMode={true} setIsDarkMode={mockSetIsDarkMode} />);
-      const logo = screen.getByRole('img', { name: /logo/i });
-      // Match Next.js Image URL pattern
-      expect(logo.getAttribute('src')).toMatch(/logo-dark\.png/);
-    });
+  it('handles theme toggle correctly', () => {
+    const { rerender } = render(<Navbar isDarkMode={false} setIsDarkMode={mockSetIsDarkMode} />);
+
+    const themeButton = screen.getByRole('button', { name: /toggle theme/i });
+    fireEvent.click(themeButton);
+    expect(mockSetIsDarkMode).toHaveBeenCalledWith(true);
+
+    rerender(<Navbar isDarkMode={true} setIsDarkMode={mockSetIsDarkMode} />);
+    const logo = screen.getByRole('img', { name: /logo/i });
+    // Match Next.js Image URL pattern
+    expect(logo.getAttribute('src')).toMatch(/logo-dark\.png/);
+  });
 
   it("handles mobile menu visibility", () => {
     render(<Navbar isDarkMode={false} setIsDarkMode={mockSetIsDarkMode} />);

@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useEffect, useState } from "react";
-import Navbar from "./sections/Navbar";
-import Hero from "./sections/Hero";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
