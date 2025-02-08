@@ -57,6 +57,14 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
           </Link>
         </li>
         <li>
+          <Link
+            className="flex flex-col items-center gap-1"
+            href={"#collection"}
+          >
+            Collection{" "}
+          </Link>
+        </li>
+        <li>
           <Link className="flex flex-col items-center gap-1" href={"#women"}>
             Women&apos;s
           </Link>
@@ -66,14 +74,7 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
             Men&apos;s
           </Link>
         </li>
-        <li>
-          <Link
-            className="flex flex-col items-center gap-1"
-            href={"#collection"}
-          >
-            Collection{" "}
-          </Link>
-        </li>
+        
         <li>
           <Link className="flex flex-col items-center gap-1" href={"/about"}>
             About
