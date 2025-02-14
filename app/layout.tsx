@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Playfair_Display, Playwrite_IN } from "next/font/google";
 import "./globals.css";
 import { ShopContextProvider } from "./context/ShopContext";
+import FooterWrapper from './components/FooterWrapper';
 
 const outfit = Outfit({
   weight: ['400', '500', '600', '700'],
@@ -92,6 +93,7 @@ export default function RootLayout({
       >
         <ShopContextProvider>
           {children}
+          <FooterWrapper />
         </ShopContextProvider>
       </body>
     </html>

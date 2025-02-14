@@ -5,6 +5,9 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import LatestCollection from "./components/LatestCollection";
 import BestSeller from "./components/BestSeller";
+import OurPolicy from "./components/OurPolicy";
+import NewsLetterBox from './components/NewsLetterBox';
+import Footer from "./components/Footer";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -34,6 +37,9 @@ export default function Home() {
       <Hero isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <LatestCollection isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <BestSeller />
+      <OurPolicy />
+      <NewsLetterBox />
+      <Footer isDarkMode={isDarkMode} />
     </>
   );
 }

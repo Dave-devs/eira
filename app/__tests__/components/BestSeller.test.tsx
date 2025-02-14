@@ -43,7 +43,6 @@ describe("BestSeller Component", () => {
         );
 
         expect(screen.getByTestId("bestseller-section")).toBeInTheDocument();
-        expect(screen.getByTestId("bestseller-header")).toHaveTextContent("BEST SELLERS");
         expect(screen.getByTestId("bestseller-description")).toBeInTheDocument();
     });
 

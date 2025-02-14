@@ -29,7 +29,7 @@ export default function LatestCollection({
     <section data-testid="latest-collection-section" className="my-10">
       <div data-testid="title-section" className="text-center py-8 text-3xl">
         <Title text1="LATEST" text2="COLLECTIONS" />
-        <p data-testid="collection-description" className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
+        <p data-testid="collection-description" className="w-3/4 m-auto text-xs sm:text-sm md:text-base">
           Discover our latest collection—trendy, stylish, and crafted for every
           occasion. Shop now and upgrade your wardrobe!
         </p>

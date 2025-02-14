@@ -14,7 +14,7 @@ interface ShopContextType {
 export const ShopContext = createContext<ShopContextType>({
   products,
   currency: "&pound;",
-  delivery_fee: 30.99,
+  delivery_fee: 30.99
 });
 
 export const ShopContextProvider = ({ children }: { children: ReactNode }) => {
@@ -25,6 +25,7 @@ export const ShopContextProvider = ({ children }: { children: ReactNode }) => {
     products,
     currency,
     delivery_fee,
+
   };
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
