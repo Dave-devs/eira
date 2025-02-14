@@ -13,5 +13,12 @@ export default function FooterWrapper() {
         return null;
     }
 
-    return <Footer isDarkMode={isDarkMode} />;
+    return (
+        <div data-testid="footer-wrapper">
+            <Footer
+                data-testid="footer-component"
+                isDarkMode={isDarkMode}
+            />
+        </div>
+    );
 }
