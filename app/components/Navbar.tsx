@@ -52,25 +52,25 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
       {/* ******** Nav Links ******** */}
       <ul className="hidden sm:flex items-center gap-6 font-playfair font-medium">
         <li>
-          <Link className="flex flex-col items-center gap-1" href={"#/"}>
+          <Link className="flex flex-col items-center gap-1" href={"/home"}>
             Home
           </Link>
         </li>
         <li>
           <Link
             className="flex flex-col items-center gap-1"
-            href={"#collection"}
+            href={"/collection"}
           >
             Collection{" "}
           </Link>
         </li>
         <li>
-          <Link className="flex flex-col items-center gap-1" href={"#women"}>
+          <Link className="flex flex-col items-center gap-1" href={"/women"}>
             Women&apos;s
           </Link>
         </li>
         <li>
-          <Link className="flex flex-col items-center gap-1" href={"#men"}>
+          <Link className="flex flex-col items-center gap-1" href={"/men"}>
             Men&apos;s
           </Link>
         </li>
@@ -158,7 +158,7 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
               <Link
                 onClick={() => setMenuIsVisible(false)}
                 className="py-2 pl-6"
-                href={"#/"}
+                href={"/home"}
               >
                 Home
               </Link>
@@ -167,25 +167,7 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
               <Link
                 onClick={() => setMenuIsVisible(false)}
                 className="py-2 pl-6"
-                href={"#women"}
-              >
-                Women&apos;s
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={() => setMenuIsVisible(false)}
-                className="py-2 pl-6"
-                href={"#men"}
-              >
-                Men&apos;s
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={() => setMenuIsVisible(false)}
-                className="py-2 pl-6"
-                href={"#collection"}
+                href={"/collection"}
               >
                 Collection
               </Link>
@@ -194,7 +176,25 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
               <Link
                 onClick={() => setMenuIsVisible(false)}
                 className="py-2 pl-6"
-                href={"#about"}
+                href={"/women"}
+              >
+                Women&apos;s
+              </Link>
+            </li>
+            <li>
+              <Link
+                onClick={() => setMenuIsVisible(false)}
+                className="py-2 pl-6"
+                href={"/men"}
+              >
+                Men&apos;s
+              </Link>
+            </li>
+            <li>
+              <Link
+                onClick={() => setMenuIsVisible(false)}
+                className="py-2 pl-6"
+                href={"/about"}
               >
                 About
               </Link>
@@ -203,7 +203,7 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
               <Link
                 onClick={() => setMenuIsVisible(false)}
                 className="py-2 pl-6"
-                href={"#contact"}
+                href={"/contact"}
               >
                 Contact
               </Link>
