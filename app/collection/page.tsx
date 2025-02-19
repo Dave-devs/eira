@@ -7,7 +7,7 @@ import RightSideCollection from "../components/RightSideCollection";
 import Product from "../types/product";
 
 export default function Collection() {
-  const { products } = useContext(ShopContext);
+  const { products, search, showSearch } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState<boolean>(false);
   const [filterProducts, setFilterProducts] = useState<Product[]>([]);
   const [category, setCategory] = useState<string[]>([]);
@@ -33,6 +33,12 @@ export default function Collection() {
   const applyFilter = useCallback(() => {
     let productCopy = products.slice();
 
+    if (showSearch && search) {
+      productCopy = productCopy.filter((product) =>
+        product.title.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+
     if (category.length > 0) {
       productCopy = productCopy.filter((product) =>
         category.includes(product.category)
@@ -45,7 +51,7 @@ export default function Collection() {
       );
     }
     setFilterProducts(productCopy);
-  }, [products, category, subCategory]);
+  }, [products, showSearch, search, category, subCategory]);
 
   useEffect(() => {
     setFilterProducts(products);
@@ -72,10 +78,7 @@ export default function Collection() {
   }, [applyFilter]);
 
   return (
-    <section
-      data-testid="collection-section"
-      className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t max-w-7xl mx-auto"
-    >
+    <section data-testid="collection-section" className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t max-w-7xl mx-auto">
       {/* ******** LEFT SIDE ******** */}
       <LeftSideCollectionFilter
         data-testid="left-side-filter"

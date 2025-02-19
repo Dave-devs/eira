@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineLightMode } from "react-icons/md";
@@ -10,6 +10,7 @@ import { FiSearch } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { MdOutlinePersonOutline } from "react-icons/md";
 import { FiChevronLeft } from "react-icons/fi";
+import { ShopContext } from "../context/ShopContext";
 
 interface NavbarProps {
   isDarkMode: boolean;
@@ -19,6 +20,7 @@ interface NavbarProps {
 export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
   const [isScroll, setIsScroll] = useState<boolean>(false);
   const [menuIsVisible, setMenuIsVisible] = useState<boolean>(false);
+  const { setShowSearch } = useContext(ShopContext);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -99,7 +101,7 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
         </button>
 
         {/* ******** Search Icon ******** */}
-        <FiSearch className="cursor-pointer" size={24} />
+        <FiSearch onClick={() => setShowSearch(true)} className="cursor-pointer" size={24} />
 
         {/* ******** Profile Icon ******** */}
         <div className="group relative" data-testid="profile-menu">
